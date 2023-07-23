@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ContactForm, InputLabel, Input, SubmitBtn } from './Phonebook.styled';
 
 class Form extends Component {
@@ -66,3 +67,7 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+  onSubmit: PropTypes.elementType.isRequired,
+};

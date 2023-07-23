@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { InputLabel, Input } from './Phonebook.styled';
 
 const Filter = ({ filter, onFilterChange }) => {
@@ -11,3 +12,8 @@ const Filter = ({ filter, onFilterChange }) => {
 };
 
 export default Filter;
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onFilterChange: PropTypes.elementType.isRequired,
+};
