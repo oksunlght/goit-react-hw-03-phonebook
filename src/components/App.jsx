@@ -21,10 +21,6 @@ class App extends Component {
   };
 
   formSubmitHandler = ({ name, number }) => {
-    this.addContact({ name, number });
-  };
-
-  addContact = ({ name, number }) => {
     const contactId = nanoid(5);
 
     const newContact = {
