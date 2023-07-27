@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Item, DeleteBtn } from './Phonebook.styled';
+import ContactItem from './ContactItem';
+import { DeleteBtn } from './Phonebook.styled';
 
 const ContactList = ({ contacts, onDeleteContact }) => (
   <ul>
     {contacts.map(({ id, name, number }) => (
-      <Item key={id}>
-        &#8226; {name} {number}
+      <ContactItem key={id} id={id} name={name} number={number}>
         <DeleteBtn type="button" onClick={() => onDeleteContact(id)}>
           Delete
         </DeleteBtn>
-      </Item>
+      </ContactItem>
     ))}
   </ul>
 );
