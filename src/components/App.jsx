@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import Form from './Phonebook';
 import ContactList from './Phonebook/ContactList';
+import ContactItem from './Phonebook/ContactItem';
 import Filter from './Phonebook/Filter';
 import {
   Container,
@@ -75,10 +76,17 @@ class App extends Component {
         <Form onSubmit={formSubmitHandler} />
         <ContactsTitle>Contacts</ContactsTitle>
         <Filter filter={filter} onFilterChange={changeFilter} />
-        <ContactList
-          contacts={filteredContacts}
-          onDeleteContact={deleteContact}
-        />
+        <ContactList>
+          {filteredContacts.map(({ id, name, number }) => (
+            <ContactItem
+              key={id}
+              id={id}
+              name={name}
+              number={number}
+              onDeleteContact={deleteContact}
+            />
+          ))}
+        </ContactList>
       </Container>
     );
   }
